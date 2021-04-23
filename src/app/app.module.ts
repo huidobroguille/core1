@@ -12,6 +12,8 @@ import { TutorialDetailsComponent } from './components/tutorial-details/tutorial
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
 import {ProfesionalesListComponent} from './components/profesionales/profesionales-list/profesionales-list.component'
 import {ProfesionalDetailsComponent} from './components/profesionales/profesionales-details/profesional-details.component';
+import {InicioComponent} from './components/inicio/inicio.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {ProfesionalDetailsComponent} from './components/profesionales/profesiona
     TutorialDetailsComponent,
     TutorialsListComponent,
     ProfesionalesListComponent,
-    ProfesionalDetailsComponent
+    ProfesionalDetailsComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
