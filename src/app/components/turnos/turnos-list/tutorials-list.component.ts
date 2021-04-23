@@ -17,8 +17,6 @@ export class TutorialsListComponent implements OnInit {
 
   constructor(private tutorialService: TutorialService) { }
 
-  tutorial: Tutorial = new Tutorial();
-
   ngOnInit(): void {
     this.retrieveTutorials();
   }
@@ -50,16 +48,6 @@ export class TutorialsListComponent implements OnInit {
     this.tutorialService.deleteAll()
       .then(() => this.refreshList())
       .catch(err => console.log(err));
-  }
-  
-  saveTutorial(): void {
-    this.tutorialService.create(this.tutorial).then(() => {
-      console.log('Creacion correcta!');
-    });
-  }
-
-  newTutorial(): void {
-    this.tutorial = new Tutorial();
   }
 
 }

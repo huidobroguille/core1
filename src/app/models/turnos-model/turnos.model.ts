@@ -3,4 +3,5 @@ export default class Tutorial {
   nombre?: string;
   apellido?: string;
   numero?: string;
+
 }

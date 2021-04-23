@@ -1,10 +1,10 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h2>Usuarios</h2>
-    <button  (click)="newTutorial()" type="button" class="btn nuevo-servicio-class" data-toggle="modal"
+    <h2>Prestadores de Servicios</h2>
+    <button  (click)="newProfesional()" type="button" class="btn nuevo-servicio-class" data-toggle="modal"
     data-target="#addModal">
-    Crear Usuario
+    Crear Profesional
   </button>
 </div>
 </div>
@@ -12,13 +12,13 @@
 
 <div class=" row">
   <div class="col-md-6">
-    <h4>Lista de Usuarios</h4>
+    <h4>Lista de Prestadores de Servicios</h4>
     <ul class="list-group">
       <li
         class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
+        *ngFor="let profesional of profesionales; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)"
+        (click)="setActiveProfesional(profesional, i)"
         data-toggle="modal" data-target="#myModal" 
       >
         
@@ -26,13 +26,13 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-4">
-                {{ tutorial.nombre}}
+                {{profesional.especialidad}}
               </div>
               <div class="col-md-4">
-                {{ tutorial.apellido}}
+                {{profesional.nombre}}
               </div>
               <div class="col-md-4">
-                {{ tutorial.numero}}
+                {{profesional.apellido}}
               </div>
             </div>
           </div>
@@ -44,11 +44,11 @@
   </div>
 
   <div class="col-md-6">
-    <div *ngIf="currentTutorial">
-      <app-tutorial-details
+    <div *ngIf="currentProfesional">
+      <app-profesional-details
         (refreshList)="refreshList()"
-        [tutorial]="currentTutorial"
-      ></app-tutorial-details>
+        [profesional]="currentProfesional"
+      ></app-profesional-details>
     </div>
   </div>
 
@@ -62,7 +62,7 @@
 
 
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h3>
+        <h3 class="modal-title" id="exampleModalLabel">Nuevo Profesional</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -71,13 +71,24 @@
         <div class="submit-form">
           <div>
             <div class="form-group">
+              <label for="nombre">Especialidad</label>
+              <input
+                type="text"
+                class="form-control"
+                id="especialidad"
+                required
+                [(ngModel)]="profesional.especialidad"
+                name="especialidad"
+              />
+            </div>
+            <div class="form-group">
               <label for="nombre">Nombre</label>
               <input
                 type="text"
                 class="form-control"
                 id="nombre"
                 required
-                [(ngModel)]="tutorial.nombre"
+                [(ngModel)]="profesional.nombre"
                 name="nombre"
               />
             </div>
@@ -88,7 +99,7 @@
                 class="form-control"
                 id="apellido"
                 required
-                [(ngModel)]="tutorial.apellido"
+                [(ngModel)]="profesional.apellido"
                 name="apellido"
               />
             </div>
@@ -99,7 +110,7 @@
                 class="form-control"
                 id="numero"
                 required
-                [(ngModel)]="tutorial.numero"
+                [(ngModel)]="profesional.numero"
                 name="numero"
               />
             </div>
@@ -109,7 +120,7 @@
 
     </div>
       <div class="modal-footer">
-        <button class="btn btn-success" (click)="saveTutorial()" data-dismiss="modal">Guardar</button>
+        <button class="btn btn-success" (click)="saveProfesional()" data-dismiss="modal">Guardar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
 

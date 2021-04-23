@@ -8,16 +8,18 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
+import {ProfesionalesListComponent} from './components/profesionales/profesionales-list/profesionales-list.component'
+import {ProfesionalDetailsComponent} from './components/profesionales/profesionales-details/profesional-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent
+    TutorialsListComponent,
+    ProfesionalesListComponent,
+    ProfesionalDetailsComponent
   ],
   imports: [
     BrowserModule,
